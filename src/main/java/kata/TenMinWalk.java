@@ -2,19 +2,18 @@ package kata;
 
 public class TenMinWalk {
     public static boolean isValid(char[] walk) {
-        int nsDirection = 0, ewDirection = 0;
-        if (walk.length == 10) {
-            for (char act : walk) {
-                switch (act) {
-                    case 'n' -> nsDirection++;
-                    case 's' -> nsDirection--;
-                    case 'w' -> ewDirection++;
-                    case 'e' -> ewDirection--;
-                }
+        if (walk.length != 10) return false;
+
+        int x = 0, y = 0;
+        for (char c : walk) {
+            switch (c) {
+                case 'n' -> x++;
+                case 's' -> x--;
+                case 'w' -> y++;
+                case 'e' -> y--;
             }
-        } else {
-            return false;
         }
-        return nsDirection == 0 && ewDirection == 0;
+
+        return x == 0 && y == 0;
     }
 }
