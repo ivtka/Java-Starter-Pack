@@ -1,8 +1,7 @@
 package kata;
 
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.Arrays;
 
 public class Kata {
     public static int[] arrayDiff(int[] a, int[] b) {
@@ -25,24 +24,12 @@ public class Kata {
     }
 
     public static int[] sortArray(int[] array) {
-        List<Integer> list = new ArrayList<>();
-        for (int k : array) {
-            if (isOdd(k)) {
-                list.add(k);
-            }
-        }
-        Collections.sort(list);
-        int j = 0;
-        for (int i = 0; i < array.length; i++) {
-            if (isOdd(array[i])) {
-                array[i] = list.get(j);
-                j++;
-            }
-        }
-        return array;
-    }
+        final int[] sortedOdd = Arrays.stream(array).filter(e -> e % 2 != 0).sorted().toArray();
 
-    public static boolean isOdd(int element) {
-        return element % 2 != 0;
+        for (int index = 0, indexOdd = 0; index < array.length; index++) {
+            if (array[index] % 2 != 0) array[index] = sortedOdd[indexOdd++];
+        }
+
+        return array;
     }
 }
