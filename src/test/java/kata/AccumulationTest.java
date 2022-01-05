@@ -1,9 +1,12 @@
 package kata;
 
-import junit.framework.TestCase;
+import static org.junit.Assert.assertEquals;
 
-public class AccumulationTest extends TestCase {
+import org.junit.Test;
 
+public class AccumulationTest {
+
+    @Test
     public void testAccumulate() {
         testing(Accumulation.accumulate("ZpglnRxqenU"), "Z-Pp-Ggg-Llll-Nnnnn-Rrrrrr-Xxxxxxx-Qqqqqqqq-Eeeeeeeee-Nnnnnnnnnn-Uuuuuuuuuuu");
         testing(Accumulation.accumulate("NyffsGeyylB"), "N-Yy-Fff-Ffff-Sssss-Gggggg-Eeeeeee-Yyyyyyyy-Yyyyyyyyy-Llllllllll-Bbbbbbbbbbb");
