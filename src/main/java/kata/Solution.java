@@ -18,4 +18,8 @@ public class Solution {
         final long product = IntStream.of(numbers).asLongStream().reduce(1, (x, y) -> x * y);
         return IntStream.of(numbers).mapToLong(x -> product / x).toArray();
     }
+
+    public static String replace(final String s) {
+        return s.replaceAll("[aeiouAEIOU]", "!");
+    }
 }
