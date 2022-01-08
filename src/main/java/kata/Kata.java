@@ -58,8 +58,6 @@ public class Kata {
     }
 
     public static String chromosomeCheck(String sperm) {
-        String sex;
-        sex = sperm.equals("XX") ? "daughter" : "son";
-        return "Congratulations! You're going to have a " + sex + ".";
+        return "Congratulations! You're going to have a " + (sperm.contains("Y") ? "son." : "daughter.");
     }
 }
