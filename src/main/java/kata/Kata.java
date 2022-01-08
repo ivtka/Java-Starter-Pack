@@ -56,4 +56,10 @@ public class Kata {
         int p = (p1 + p2).equals("scissorspaper") || (p1 + p2).equals("rockscissors") || (p1 + p2).equals("paperrock") ? 1 : 2;
         return "Player " + p + " won!";
     }
+
+    public static String chromosomeCheck(String sperm) {
+        String sex;
+        sex = sperm.equals("XX") ? "daughter" : "son";
+        return "Congratulations! You're going to have a " + sex + ".";
+    }
 }
