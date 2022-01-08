@@ -2,6 +2,7 @@ package kata;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.stream.IntStream;
 
 public class Kata {
@@ -59,5 +60,18 @@ public class Kata {
 
     public static String chromosomeCheck(String sperm) {
         return "Congratulations! You're going to have a " + (sperm.contains("Y") ? "son." : "daughter.");
+    }
+
+    public static double findUniq(double[] arr) {
+        Arrays.sort(arr);
+        return arr[0] == arr[1] ? arr[arr.length - 1] : arr[0];
+    }
+
+    public static int[] DataReverse(int[] data) {
+        int[] bytes = new int[data.length];
+        for (int i = data.length - 8, j = 0; i >= 0; i -= 8, j += 8) {
+            System.arraycopy(data, i, bytes, j, 8);
+        }
+        return bytes;
     }
 }

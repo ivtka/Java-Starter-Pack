@@ -1,12 +1,28 @@
 package kata;
 
 import org.junit.Test;
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertArrayEquals;
 
 public class KataTest {
     @Test
-    public void tests() {
-        assertEquals("Congratulations! You're going to have a son.", Kata.chromosomeCheck("XY"));
-        assertEquals("Congratulations! You're going to have a daughter.", Kata.chromosomeCheck("XX"));
+    public void Test1() {
+        int[] data1= {1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,0,1,0,1,0,1,0};
+        int[] data2= {1,0,1,0,1,0,1,0,0,0,0,0,1,1,1,1,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1};
+        assertArrayEquals(data2, Kata.DataReverse(data1));
+    }
+
+    @Test
+    public void Test2() {
+        int[] data1= {0,0,1,1,0,1,1,0,0,0,1,0,1,0,0,1};
+        int[] data2= {0,0,1,0,1,0,0,1,0,0,1,1,0,1,1,0};
+        assertArrayEquals(data2, Kata.DataReverse(data1));
+
+    }
+
+    @Test
+    public void RandomTest() {
+        int[] data1 = {0, 1, 0, 0, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1};
+        int[] data2 = {1, 0, 1, 1, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 1};
+        assertArrayEquals(data2, Kata.DataReverse(data1));
     }
 }

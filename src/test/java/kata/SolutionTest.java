@@ -2,15 +2,19 @@ package kata;
 
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertArrayEquals;
+import static org.junit.Assert.*;
 
 public class SolutionTest {
     @Test
-    public void basicTests() {
-        assertEquals("H!!", Solution.replace("Hi!"));
-        assertEquals("!H!! H!!", Solution.replace("!Hi! Hi!"));
-        assertEquals("!!!!!", Solution.replace("aeiou"));
-        assertEquals("!BCD!", Solution.replace("ABCDE"));
+    public void testSomeUnderscoreLowerStart() {
+        String input = "the_Stealth_Warrior";
+        System.out.println("input: "+input);
+        assertEquals("theStealthWarrior", Solution.toCamelCase(input));
+    }
+    @Test
+    public void testSomeDashLowerStart() {
+        String input = "the-Stealth-Warrior";
+        System.out.println("input: "+input);
+        assertEquals("theStealthWarrior", Solution.toCamelCase(input));
     }
 }
