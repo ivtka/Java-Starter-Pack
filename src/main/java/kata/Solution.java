@@ -1,5 +1,8 @@
 package kata;
 
+import java.util.Locale;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import java.util.stream.IntStream;
 import java.util.Collections;
 import java.util.PriorityQueue;
@@ -34,14 +37,15 @@ public class Solution {
     }
 
     public static String toCamelCase(String s) {
-        StringBuilder sb = new StringBuilder();
-        for (int i = 0; i < s.length(); i++) {
-            if (s.charAt(i) == '_' || s.charAt(i) == '-') {
-                sb.append(Character.toUpperCase(s.charAt(i + 1)));
-                i += 2;
-            }
-            sb.append(s.charAt(i));
+        Matcher m = Pattern.compile("[_|-](\\w)").matcher(s);
+        StringBuffer sb = new StringBuffer();
+        while (m.find()) {
+            m.appendReplacement(sb, m.group(1).toUpperCase());
         }
-        return sb.toString();
+        return m.appendTail(sb).toString();
+    }
+
+    public static String balancedNum(long number) {
+
     }
 }

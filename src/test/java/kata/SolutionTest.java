@@ -6,15 +6,21 @@ import static org.junit.Assert.*;
 
 public class SolutionTest {
     @Test
-    public void testSomeUnderscoreLowerStart() {
-        String input = "the_Stealth_Warrior";
-        System.out.println("input: "+input);
-        assertEquals("theStealthWarrior", Solution.toCamelCase(input));
+    public void Check_Balanced_Number()
+    {
+        assertEquals("Balanced", Solution.balancedNum(7));
+        assertEquals("Balanced", Solution.balancedNum(959));
+        assertEquals("Balanced", Solution.balancedNum(13));
+        assertEquals("Not Balanced", Solution.balancedNum(432));
+        assertEquals("Balanced", Solution.balancedNum(424));
     }
     @Test
-    public void testSomeDashLowerStart() {
-        String input = "the-Stealth-Warrior";
-        System.out.println("input: "+input);
-        assertEquals("theStealthWarrior", Solution.toCamelCase(input));
+    public void Check_Larger_Number()
+    {
+        assertEquals("Not Balanced", Solution.balancedNum(1024));
+        assertEquals("Not Balanced", Solution.balancedNum(66545));
+        assertEquals("Not Balanced", Solution.balancedNum(295591));
+        assertEquals("Not Balanced", Solution.balancedNum(1230987));
+        assertEquals("Balanced", Solution.balancedNum(56239814));
     }
 }
